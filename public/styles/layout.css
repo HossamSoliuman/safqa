@@ -1,0 +1,85 @@
+/* layout.css */
+.container {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0 0;
+}
+
+.header {
+  background-color: var(--color-bg-white);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 10px;
+  padding: 0 1rem;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.page-banner {
+  background-color: var(--color-bg);
+  /* Use a radial gradient for the subtle dotted map effect behind the title */
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: left top;
+  padding: var(--spacing-2xl) 0;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .page-layout {
+    grid-template-columns: 250px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+  .header__inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: var(--spacing-md) 0;
+    gap: var(--spacing-md);
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Flex utilities */
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-column { flex-direction: column; }
+.flex-reverse { flex-direction: row-reverse; }
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
