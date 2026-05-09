@@ -20,7 +20,9 @@
     </div>
 
     <div class="project-card__body">
-        <h3 class="font-bold text-lg project-card__title">{{ $title }}</h3>
+        <h3 class="font-bold text-lg project-card__title">
+            <a href="{{ route('projects.show') }}" style="color:inherit; text-decoration:none;">{{ $title }}</a>
+        </h3>
         <p class="text-muted text-sm project-card__desc">{{ $description }}</p>
 
         <div class="project-card__tags">

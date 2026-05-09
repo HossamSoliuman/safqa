@@ -1,0 +1,212 @@
+/* auth.css */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f8f9fa;
+}
+
+.auth-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-2xl);
+    background-color: #f1f3f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-content {
+    width: 100%;
+    max-width: 550px;
+    background-color: #fff;
+    padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+/* Marketing Section (Right Side) */
+.auth-sidebar__header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.auth-sidebar__title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-dark);
+}
+
+.auth-sidebar__title span {
+    color: var(--color-primary);
+}
+
+.auth-sidebar__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.auth-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.auth-feature-item {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.auth-feature-icon {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+}
+
+.auth-feature-text h3 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.auth-feature-text p {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+.auth-sidebar__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.auth-stats-bar {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--shadow-md);
+    margin-top: auto;
+    z-index: 2;
+}
+
+/* Login Form (Left Side) */
+.login-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.login-tabs {
+    display: flex;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.login-tab {
+    flex: 1;
+    text-align: center;
+    padding: var(--spacing-sm) 0;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    color: var(--color-text-muted);
+}
+
+.login-tab--active {
+    background: #fff;
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+    text-align: right;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+    background: var(--color-bg);
+    border-color: var(--color-primary);
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin: var(--spacing-xl) 0;
+}
+
+.divider-text::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-border);
+    z-index: 1;
+}
+
+.divider-text span {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 0 var(--spacing-md);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .auth-sidebar {
+        display: none;
+    }
+    .auth-content {
+        max-width: 100%;
+    }
+}
