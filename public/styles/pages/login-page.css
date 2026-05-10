@@ -1,0 +1,611 @@
+/* =============================================================
+   LOGIN PAGE — Dedicated Styles
+   Matches design reference: two-column RTL layout
+   Form card LEFT | Marketing panel RIGHT
+============================================================= */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+
+.lp-body {
+  font-family: 'Cairo', 'Inter', sans-serif;
+  background-color: #f5f0eb;          /* warm cream from design */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  /* Override global reset.css body padding */
+  padding: 0 !important;
+}
+
+/* ── Page Wrapper ─────────────────────────────────────────── */
+.lp-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;                /* RTL: form card on left, marketing on right visually */
+  min-height: calc(100vh - 48px);
+  gap: 0;
+}
+
+/* =============================================================
+   FORM SIDE  (Left column in RTL view)
+============================================================= */
+.lp-form-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  min-width: 440px;
+  width: 42%;
+  overflow: hidden;
+}
+
+/* Decorative orange circle + dot grid */
+.lp-dots { position: absolute; z-index: 0; }
+
+.lp-dots--top-left {
+  top: 0;
+  left: 0;
+}
+
+.lp-dots-circle--orange {
+  width: 140px;
+  height: 140px;
+  background: #f37021;
+  border-radius: 50%;
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  opacity: 0.9;
+}
+
+.lp-dots-grid {
+  position: absolute;
+  top: 16px;
+  left: 60px;
+  width: 120px;
+  height: 80px;
+  background-image: radial-gradient(circle, #c0a98a 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.45;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.lp-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.lp-logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.lp-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.lp-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-logo-text {
+  font-size: 26px;
+  font-weight: 900;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+/* ── Welcome ──────────────────────────────────────────────── */
+.lp-welcome {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.lp-welcome-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.lp-welcome-sub {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.lp-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  gap: 4px;
+  border: 1px solid #e2e8f0 ;
+}
+
+.lp-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.lp-tab--active {
+  background: #fbd5bd;
+  color: #f37021;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+.lp-tab:hover:not(.lp-tab--active) {
+  color: #374151;
+}
+
+/* ── Form Fields ──────────────────────────────────────────── */
+.lp-form { width: 100%; }
+
+.lp-field { margin-bottom: 15px; }
+
+.lp-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.lp-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lp-input {
+  width: 100%;
+  padding: 11px 32px 11px 32px;     /* right padding for RTL icon */
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 10px;
+  font-family: inherit;
+  color: #1e293b;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.lp-input--has-left-icon {
+  padding-left: 44px;               /* extra left padding for eye icon */
+}
+
+.lp-input::placeholder { color: #b0bec5; }
+
+.lp-input:focus {
+  border-color: #f37021;
+  box-shadow: 0 0 0 3px rgba(243,112,33,0.12);
+}
+
+/* Icons inside inputs */
+.lp-input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lp-input-icon--right { right: 14px; }
+.lp-input-icon--left  { left: 14px; }
+
+/* Eye button (clickable) */
+.lp-eye-btn {
+  pointer-events: all;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+.lp-eye-btn:hover { color: #f37021; }
+
+/* Forgot password */
+.lp-forgot {
+  margin-top: 5px;
+  text-align: left;                 /* appears on left side in RTL = start */
+}
+
+.lp-forgot-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f37021;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.lp-forgot-link:hover { opacity: 0.75; }
+
+/* ── Submit Button ────────────────────────────────────────── */
+.lp-submit {
+  width: 100%;
+  padding: 8px;
+  background: #f37021;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(243,112,33,0.35);
+}
+
+.lp-submit:hover {
+  background: #e06318;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(243,112,33,0.45);
+}
+
+.lp-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(243,112,33,0.3);
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+.lp-divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  gap: 12px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.lp-divider::before,
+.lp-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* ── Social Buttons ───────────────────────────────────────── */
+.lp-social {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.lp-social-btn {
+  flex: 1;
+  height: 48px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  color: #475569;
+}
+
+.lp-social-btn:hover {
+  border-color: #f37021;
+  background: #fff8f5;
+  box-shadow: 0 2px 8px rgba(243,112,33,0.15);
+}
+
+/* ── Register Link ────────────────────────────────────────── */
+.lp-register-link {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.lp-register-anchor {
+  color: #f37021;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 4px;
+  transition: opacity 0.2s;
+}
+
+.lp-register-anchor:hover { opacity: 0.75; }
+
+/* =============================================================
+   MARKETING SIDE  (Right column in RTL view)
+============================================================= */
+.lp-marketing-side {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 56px 0 56px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* ── Floating Avatars ─────────────────────────────────────── */
+.lp-avatar {
+  position: absolute;
+  z-index: 3;
+}
+
+.lp-avatar--top-right {
+  top: 40px;
+  left: 40px;
+}
+
+.lp-avatar--mid-right {
+  top: 220px;
+  left: 16px;
+}
+
+.lp-avatar-placeholder {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e2d5c8, #c9b89e);
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lp-avatar-placeholder::after {
+  content: '';
+  display: block;
+  width: 55%;
+  height: 55%;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  margin-top: -8px;
+}
+
+.lp-avatar-placeholder--1 { width: 54px; height: 54px; }
+.lp-avatar-placeholder--2 { width: 48px; height: 48px; }
+
+/* ── Heading ──────────────────────────────────────────────── */
+.lp-mkt-heading {
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.lp-mkt-title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.lp-mkt-title-highlight {
+  color: #f37021;
+}
+
+.lp-mkt-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ── Content row (features + person image) ────────────────── */
+.lp-mkt-content {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Features List ────────────────────────────────────────── */
+.lp-features {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex: 1;
+  padding-bottom: 32px;
+}
+
+.lp-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  justify-content: flex-end;
+  text-align: end;
+}
+
+.lp-feature-icon {
+  width: 46px;
+  height: 46px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f37021;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+.lp-feature-text h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 3px;
+}
+
+.lp-feature-text p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* ── Person image placeholder ─────────────────────────────── */
+.lp-person-image {
+  flex-shrink: 0;
+  width: 280px;
+  align-self: flex-end;
+  position: relative;
+}
+
+.lp-person-placeholder {
+  width: 280px;
+  height: 300px;
+  background: linear-gradient(180deg, #ede5db 0%, #d9c9b5 100%);
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-person-placeholder::before {
+  /* subtle person silhouette */
+  content: '';
+  position: absolute;
+  bottom: 60px;
+  width: 90px;
+  height: 100px;
+  background: rgba(193,170,140,0.5);
+  border-radius: 50% 50% 0 0;
+}
+
+.lp-person-placeholder > svg:first-child {
+  position: absolute;
+  top: 40px;
+}
+
+.lp-laptop-placeholder {
+  position: absolute;
+  bottom: 24px;
+}
+
+.lp-safqa-watermark {
+  position: absolute;
+  bottom: 80px;
+  right: 24px;
+}
+
+/* =============================================================
+   STATS BAR  (bottom of marketing side)
+============================================================= */
+.lp-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 28px;
+  margin-top: 10px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 3;
+}
+
+.lp-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lp-stat-icon {
+  color: #f37021;
+  display: flex;
+  align-items: center;
+}
+
+.lp-stat-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+  color: #f37021;
+  line-height: 1.1;
+}
+
+.lp-stat-label {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* ── Separator line between stats ─────────────────────────── */
+.lp-stat + .lp-stat {
+  border-right: 1px solid #f1f5f9;
+  padding-right: 16px;
+  margin-right: 0;
+}
+
+/* =============================================================
+   FOOTER
+============================================================= */
+.lp-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: #94a3b8;
+  background: transparent;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+@media (max-width: 1100px) {
+  .lp-mkt-title { font-size: 32px; }
+  .lp-person-image { width: 220px; }
+  .lp-person-placeholder { width: 220px; height: 240px; }
+  .lp-marketing-side { padding: 40px 36px 0 36px; }
+}
+
+@media (max-width: 900px) {
+  .lp-wrapper { flex-direction: column; }
+
+  .lp-form-side {
+    width: 100%;
+    min-width: unset;
+    padding: 32px 20px;
+  }
+
+  .lp-marketing-side { display: none; }
+}
+
+@media (max-width: 480px) {
+  .lp-card { padding: 28px 20px; }
+  .lp-mkt-title { font-size: 26px; }
+}

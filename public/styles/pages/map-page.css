@@ -1,0 +1,337 @@
+/* Map Selection Page Styles */
+
+/* ----------------------------------
+   Layout
+---------------------------------- */
+.map-page-container {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.map-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 450px ; /* Sidebar (450px) : Map (1fr) */
+  gap: var(--spacing-xl);
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+  .map-page-layout {
+    grid-template-columns: 1fr;
+  }
+  .map-page-sidebar {
+    order: 2;
+  }
+  .map-page-main {
+    order: 1;
+    height: 400px; /* Fixed height for mobile map */
+  }
+}
+
+/* ----------------------------------
+   Map Area (Main)
+---------------------------------- */
+.map-page-main {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.map-page-card {
+  flex: 1;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #e5e3df;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Search Overlay on Map */
+.map-page-search-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Aligned Right in RTL */
+  z-index: 10;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+}
+
+/* Map Center Elements */
+.map-page-center-pin-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.map-page-radius-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-color: rgba(243, 112, 33, 0.15);
+  border: 2px solid rgba(243, 112, 33, 0.5);
+  border-radius: 50%;
+}
+
+.map-page-center-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: var(--color-primary);
+}
+
+/* Map Avatars */
+.map-page-user-avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: var(--shadow-sm);
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
+/* Map Controls */
+.map-page-controls {
+  position: absolute;
+  bottom: 120px;
+  left: 20px; /* Aligned Left in RTL if Sidebar is Right */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-page-control-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.map-page-control-btn:hover {
+  background: #f8f8f8;
+  color: var(--color-primary);
+}
+
+/* Floating Stats Card */
+.map-page-stats-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.map-page-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+.map-page-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid #eee;
+}
+
+.map-page-stat-item:last-child {
+  border-left: none;
+}
+
+/* Tips Box */
+.map-page-tips {
+  background-color: #fffaf7;
+  border: 1px solid #ffe8d6;
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ----------------------------------
+   Sidebar
+---------------------------------- */
+.map-page-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-page-sidebar-inner {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  gap: 15px;
+}
+
+/* Stepper */
+.map-page-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.map-page-stepper-line {
+  position: absolute;
+  top: 15px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #eee;
+  z-index: 1;
+}
+
+.map-page-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.map-page-step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+  color: #999;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 0 4px white;
+}
+
+.map-page-step--active .map-page-step-circle {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Selection Methods */
+.map-page-methods {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.map-page-method-card {
+  padding: 20px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.map-page-method-card:hover {
+  border-color: var(--color-primary);
+}
+
+.map-page-method-card--active {
+  border: 2px solid var(--color-primary);
+  background-color: #fffaf7;
+}
+
+/* Range Slider */
+.map-page-range-slider {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.map-page-slider-wrapper {
+  position: relative;
+  padding: 20px 0 10px;
+}
+
+.map-page-slider-track {
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  position: relative;
+}
+
+.map-page-slider-active {
+  position: absolute;
+  top: 0;
+  right: 0; /* Aligned Right in RTL */
+  height: 100%;
+  width: 40%;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.map-page-slider-thumb {
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  transform: translate(50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Summary Box */
+.map-page-summary-box {
+  background-color: #fff4ed;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: 32px;
+}
