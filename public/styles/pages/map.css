@@ -1,0 +1,86 @@
+/* Map View */
+.map-container {
+  height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+
+.map-sidebar {
+  background: #fff;
+  border-left: 1px solid var(--color-border);
+  padding: var(--spacing-xl);
+  overflow-y: auto;
+}
+
+.map-content {
+  position: relative;
+  background-color: #e5e3df; /* Map placeholder color */
+  background-image: url('https://i.stack.imgur.com/8f8v9.png'); /* Mock map background */
+  background-size: cover;
+  background-position: center;
+}
+
+.map-marker {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.map-marker svg {
+  transform: rotate(45deg);
+}
+
+.map-marker--user {
+  background: #fff;
+  color: var(--color-primary);
+}
+
+.location-radius {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(243, 112, 33, 0.1);
+  border: 2px dashed var(--color-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.step-indicator {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  opacity: 0.5;
+}
+
+.step-item--active {
+  opacity: 1;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}

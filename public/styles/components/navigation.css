@@ -1,0 +1,19 @@
+/* Navigation */
+.nav__list {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.nav__link {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+.nav__link--active {
+  color: var(--color-primary);
+}

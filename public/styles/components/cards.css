@@ -1,0 +1,235 @@
+/* Cards */
+.card {
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Project Card Layout */
+.project-card {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  position: relative;
+}
+
+.project-card__icon-box {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.project-card__body {
+  flex: 1;
+}
+
+.project-card__title {
+  margin-bottom: var(--spacing-xs);
+}
+
+.project-card__desc {
+  margin-bottom: var(--spacing-md);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.tag--premium {
+  background-color: var(--color-badge-bg);
+  border-color: transparent;
+  color: var(--color-badge-text);
+  font-weight: 600;
+}
+
+.tag--premium .icon {
+  color: var(--color-badge-text);
+}
+
+.project-card__bookmark {
+  position: absolute;
+  top: var(--spacing-lg);
+  left: var(--spacing-lg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.project-card__bookmark:hover {
+  color: var(--color-primary);
+}
+
+.project-card__meta {
+  display: flex;
+  gap: var(--spacing-2xl);
+  text-align: center;
+  min-width: 250px;
+  margin-top: 30px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-item__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.meta-item__value {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.meta-item__value--primary {
+  color: var(--color-primary);
+}
+
+/* Stat Card */
+.stat-card {
+  background: var(--color-bg-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex: 1;
+}
+
+.stat-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card__icon--primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.stat-card__value {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text-dark);
+}
+
+.stat-card__label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Category Card */
+.category-card {
+  background: var(--color-bg-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.category-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.category-card__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 24px;
+  transition: all var(--transition-fast);
+}
+
+.category-card:hover .category-card__icon {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Freelancer Card */
+.freelancer-card {
+  text-align: center;
+}
+
+.freelancer-card__header {
+  margin-bottom: var(--spacing-md);
+}
+
+.freelancer-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-sm);
+  border: 3px solid var(--color-primary-light);
+}
+
+.freelancer-card__name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.freelancer-card__title {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.freelancer-card__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: var(--spacing-md);
+}
+
+.freelancer-card__rating .star {
+  color: #ffc107;
+}
+
+.freelancer-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: var(--spacing-lg);
+}
